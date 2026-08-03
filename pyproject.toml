@@ -1,0 +1,96 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "praxium"
+version = "0.1.0"
+description = "Praxium is a typed, asynchronous, observable framework for AI agents and graph workflows."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Praxium contributors" }]
+keywords = ["ai", "agents", "asyncio", "graph", "pydantic"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Typing :: Typed",
+]
+dependencies = ["pydantic>=2.10,<3"]
+
+[project.optional-dependencies]
+api = ["fastapi>=0.115", "uvicorn[standard]>=0.30"]
+cli = ["typer>=0.15"]
+postgres = ["asyncpg>=0.30"]
+otel = ["opentelemetry-api>=1.28", "opentelemetry-sdk>=1.28"]
+providers = ["httpx>=0.27,<1"]
+azure = ["azure-identity>=1.19,<2", "httpx>=0.27,<1"]
+aws = ["boto3>=1.35,<2"]
+gcp = ["google-auth>=2.35,<3"]
+cloud-providers = [
+  "azure-identity>=1.19,<2",
+  "boto3>=1.35,<2",
+  "google-auth>=2.35,<3",
+  "httpx>=0.27,<1",
+]
+dev = [
+  "build>=1.2",
+  "hatch>=1.14",
+  "httpx>=0.27,<1",
+  "mypy>=1.13",
+  "pytest>=7.4",
+  "pytest-asyncio>=0.23",
+  "pytest-cov>=5",
+  "ruff>=0.8",
+]
+
+[project.scripts]
+praxium = "praxium.cli:main"
+
+[project.urls]
+Documentation = "https://example.invalid/praxium/docs"
+Repository = "https://example.invalid/praxium"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/praxium"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/praxium", "tests", "examples", "docs", "README.md", "LICENSE"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers --strict-config"
+asyncio_mode = "auto"
+pythonpath = ["src", "."]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["praxium"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "ASYNC", "RUF"]
+ignore = ["B008"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+plugins = ["pydantic.mypy"]
+packages = ["praxium"]
+mypy_path = "src"
+
+[[tool.mypy.overrides]]
+module = ["asyncpg.*", "boto3.*", "google.*", "opentelemetry.*"]
+ignore_missing_imports = true
