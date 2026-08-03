@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling>=1.26"]
+requires = ["hatchling>=1.27"]
 build-backend = "hatchling.build"
 
 [project]
@@ -8,12 +8,13 @@ version = "0.1.0"
 description = "Praxium is a typed, asynchronous, observable framework for AI agents and graph workflows."
 readme = "README.md"
 requires-python = ">=3.11"
-license = { text = "Apache-2.0" }
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
 authors = [{ name = "Praxium contributors" }]
 keywords = ["ai", "agents", "asyncio", "graph", "pydantic"]
 classifiers = [
   "Development Status :: 3 - Alpha",
-  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
@@ -52,14 +53,16 @@ dev = [
 praxium = "praxium.cli:main"
 
 [project.urls]
-Documentation = "https://example.invalid/praxium/docs"
-Repository = "https://example.invalid/praxium"
+Homepage = "https://github.com/rebel47/Praxium"
+Documentation = "https://github.com/rebel47/Praxium/tree/main/docs"
+Repository = "https://github.com/rebel47/Praxium"
+Issues = "https://github.com/rebel47/Praxium/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/praxium"]
 
 [tool.hatch.build.targets.sdist]
-include = ["src/praxium", "tests", "examples", "docs", "README.md", "LICENSE"]
+include = ["src/praxium", "tests", "examples", "docs", "README.md", "LICENSE", "NOTICE"]
 
 [tool.pytest.ini_options]
 addopts = "-ra --strict-markers --strict-config"

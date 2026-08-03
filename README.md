@@ -6,7 +6,7 @@ events, cancellation, retries, timeouts, checkpoints, and provider-neutral
 extension interfaces.
 
 > Status: `0.1.0` alpha. The executable core is being built against the tracked
-> [implementation plan](docs/IMPLEMENTATION_PLAN.md).
+> [implementation plan](https://github.com/rebel47/Praxium/blob/main/docs/IMPLEMENTATION_PLAN.md).
 
 ## Quick start
 
@@ -75,15 +75,16 @@ pytest --cov=praxium --cov-branch
 ```
 
 The architecture, milestones, acceptance criteria, and v0.1 boundary are recorded
-in [docs/IMPLEMENTATION_PLAN.md](docs/IMPLEMENTATION_PLAN.md). Repository-wide
-engineering constraints live in [AGENTS.md](AGENTS.md).
+in [docs/IMPLEMENTATION_PLAN.md](https://github.com/rebel47/Praxium/blob/main/docs/IMPLEMENTATION_PLAN.md).
+Repository-wide engineering constraints live in
+[AGENTS.md](https://github.com/rebel47/Praxium/blob/main/AGENTS.md).
 
 ## Documentation
 
-- [User guide with examples](docs/USER_GUIDE.md)
-- [Model providers and usage examples](docs/PROVIDERS.md)
-- [Architecture](docs/ARCHITECTURE.md)
-- [PostgreSQL and pgvector design](docs/POSTGRESQL.md)
-- [Deployment guide](docs/DEPLOYMENT.md)
-- [Delivered and deferred scope](docs/DELIVERY_STATUS.md)
-- [Complete implementation roadmap](docs/IMPLEMENTATION_PLAN.md)
+- [User guide with examples](https://github.com/rebel47/Praxium/blob/main/docs/USER_GUIDE.md)
+- [Model providers and usage examples](https://github.com/rebel47/Praxium/blob/main/docs/PROVIDERS.md)
+- [Architecture](https://github.com/rebel47/Praxium/blob/main/docs/ARCHITECTURE.md)
+- [PostgreSQL and pgvector design](https://github.com/rebel47/Praxium/blob/main/docs/POSTGRESQL.md)
+- [Deployment guide](https://github.com/rebel47/Praxium/blob/main/docs/DEPLOYMENT.md)
+- [Delivered and deferred scope](https://github.com/rebel47/Praxium/blob/main/docs/DELIVERY_STATUS.md)
+- [Complete implementation roadmap](https://github.com/rebel47/Praxium/blob/main/docs/IMPLEMENTATION_PLAN.md)
