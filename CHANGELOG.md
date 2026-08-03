@@ -4,6 +4,18 @@ All notable changes follow Keep a Changelog and Semantic Versioning.
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-08-03
+
+### Changed
+
+- Rewrote the README as a PyPI-first guide with installation extras, runnable
+  graph and tool-using agent examples, provider configuration, CLI usage, and a
+  contributor-only development section.
+- The generated FastAPI application now reads its displayed version from the
+  package version module instead of duplicating a release number.
+
+## [0.1.0] - 2026-08-03
+
 ### Added
 
 - Greenfield architecture and implementation plan.

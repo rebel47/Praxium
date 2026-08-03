@@ -12,6 +12,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import Field
 
+from praxium._version import __version__
 from praxium.core import Conversation, FrameworkModel, Message, Role
 from praxium.graph import Graph
 
@@ -57,7 +58,7 @@ class EmbeddingsRequest(FrameworkModel):
 def create_fastapi_app(application: Application, *, title: str = "Praxium") -> FastAPI:
     """Create an HTTP app without introducing FastAPI into core imports."""
 
-    app = FastAPI(title=title, version="0.1.0")
+    app = FastAPI(title=title, version=__version__)
 
     @app.get("/health", tags=["operations"])
     async def health() -> dict[str, str]:
